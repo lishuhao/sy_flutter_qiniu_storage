@@ -19,7 +19,8 @@ class SyFlutterQiniuStorage {
     return _onChanged;
   }
 
-  //上传
+  ///上传
+  ///
   /// key 保存到七牛的文件名
   upload(String filepath, String token, String key) async {
     var res = await _channel.invokeMethod('upload',
@@ -27,7 +28,7 @@ class SyFlutterQiniuStorage {
     print(res);
   }
 
-  //取消上传
+  /// 取消上传
   static cancelUpload() {
     _channel.invokeMethod('cancelUpload');
   }
