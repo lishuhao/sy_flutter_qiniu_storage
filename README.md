@@ -104,3 +104,4 @@ class _MyAppState extends State<MyApp> {
 其它Flutter Plugin
 - [sy_flutter_widgets](https://github.com/lishuhao/sy_flutter_widgets)
 - [支付宝](https://github.com/lishuhao/sy_flutter_alipay)
+- [微信支付](https://github.com/lishuhao/sy_flutter_wechat)
