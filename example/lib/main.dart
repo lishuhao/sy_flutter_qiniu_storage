@@ -20,7 +20,9 @@ class _MyAppState extends State<MyApp> {
   }
 
   _onUpload() async {
-    String token = '从服务端获取的token';
+    //String token = '从服务端获取的token';
+    String token =
+        'qd68lK_H3V2K8TTOCamgSCAwy2r6BddZKvYu3SGO:-YNVoHhTjc6wSlxLluh_hFBA2gA=:eyJzY29wZSI6InN5LWJ1Y2tldCIsImRlYWRsaW5lIjoxNTQ1OTkzNTAzLCJwZXJzaXN0ZW50T3BzIjoidmZyYW1lL2pwZy9vZmZzZXQvNy93LzQ4MC9oLzM2MHxzYXZlYXMvYzNrdFluVmphMlYwT2pFeU16UXpMbXB3Wnc9PSJ9';
     File file = await ImagePicker.pickVideo(source: ImageSource.camera);
     if (file == null) {
       return;

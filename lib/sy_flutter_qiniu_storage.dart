@@ -22,10 +22,10 @@ class SyFlutterQiniuStorage {
   ///上传
   ///
   /// key 保存到七牛的文件名
-  upload(String filepath, String token, String key) async {
+  Future<bool> upload(String filepath, String token, String key) async {
     var res = await _channel.invokeMethod('upload',
         <String, String>{"filepath": filepath, "token": token, "key": key});
-    print(res);
+    return res;
   }
 
   /// 取消上传
