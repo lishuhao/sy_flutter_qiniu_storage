@@ -1,3 +1,12 @@
+# I'm sorry I cannot offer support for this package any more. Feel free to fork it, you have the source
+
+
+<p align="center">
+    <a href="https://pub.dev/packages/sy_flutter_qiniu_storage">
+        <img src="https://img.shields.io/badge/pub-0.1.4-blue.svg?branch=master" alt="Build Status" />
+    </a>
+</p>
+
 # sy_flutter_qiniu_storage
 
 七牛云对象存储SDK，兼容iOS和Android
