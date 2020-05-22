@@ -1,3 +1,8 @@
+## 0.2.0
+BREAKING CHANGE:
+- upload 返回详细的上传结果UploadResult，而不是只返回bool值
+- 迁移到androidx
+
 ## 0.1.4
 upload 添加返回值
 

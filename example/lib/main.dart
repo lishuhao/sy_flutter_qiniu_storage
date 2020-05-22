@@ -22,8 +22,8 @@ class _MyAppState extends State<MyApp> {
   _onUpload() async {
     //String token = '从服务端获取的token';
     String token =
-        'qd68lK_H3V2K8TTOCamgSCAwy2r6BddZKvYu3SGO:-YNVoHhTjc6wSlxLluh_hFBA2gA=:eyJzY29wZSI6InN5LWJ1Y2tldCIsImRlYWRsaW5lIjoxNTQ1OTkzNTAzLCJwZXJzaXN0ZW50T3BzIjoidmZyYW1lL2pwZy9vZmZzZXQvNy93LzQ4MC9oLzM2MHxzYXZlYXMvYzNrdFluVmphMlYwT2pFeU16UXpMbXB3Wnc9PSJ9';
-    File file = await ImagePicker.pickVideo(source: ImageSource.camera);
+        'l9i6L16EqkGZa-9Nn4FQqofY9xMlfN9APObA1cI8:Mf77SjPSVYb_kCkVSPVM9ler9Po=:eyJmc2l6ZUxpbWl0IjoxMDAwMDAwMCwibWltZUxpbWl0IjoiaW1hZ2VcLyoiLCJmb3JjZVNhdmVLZXkiOnRydWUsInNhdmVLZXkiOiJlNmE4YmYzMzFlMDBhNWRlY2VkZjVlMGIxNGRhZWU1MC5wbmciLCJyZXR1cm5Cb2R5Ijoie1wiYmFzZV9uYW1lXCI6XCJlNmE4YmYzMzFlMDBhNWRlY2VkZjVlMGIxNGRhZWU1MFwiLFwiZmlsZW5hbWVcIjpcImU2YThiZjMzMWUwMGE1ZGVjZWRmNWUwYjE0ZGFlZTUwLnBuZ1wiLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2NlY2VtYWluLnh4d29sby5jb21cXFwvZTZhOGJmMzMxZTAwYTVkZWNlZGY1ZTBiMTRkYWVlNTAucG5nXCJ9Iiwic2NvcGUiOiJjZWNlIiwiZGVhZGxpbmUiOjMxODAyMjU5MzB9';
+    File file = await ImagePicker.pickImage(source: ImageSource.gallery);
     if (file == null) {
       return;
     }
@@ -41,8 +41,8 @@ class _MyAppState extends State<MyApp> {
         '.' +
         file.path.split('.').last;
     //上传文件
-    bool result = await syStorage.upload(file.path, token, key);
-    print(result); //true 上传成功，false失败
+    var result = await syStorage.upload(file.path, token, key);
+    print(result);
   }
 
   //取消上传

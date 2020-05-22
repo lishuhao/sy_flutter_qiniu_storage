@@ -1,12 +1,3 @@
-# I'm sorry I cannot offer support for this package any more. Feel free to fork it, you have the source
-
-
-<p align="center">
-    <a href="https://pub.dev/packages/sy_flutter_qiniu_storage">
-        <img src="https://img.shields.io/badge/pub-0.1.4-blue.svg?branch=master" alt="Build Status" />
-    </a>
-</p>
-
 # sy_flutter_qiniu_storage
 
 七牛云对象存储SDK，兼容iOS和Android
@@ -68,7 +59,7 @@ class _MyAppState extends State<MyApp> {
         '.' +
         file.path.split('.').last;
     //上传文件
-    bool result = await syStorage.upload(file.path, token, key);
+    var result = await syStorage.upload(file.path, token, key);
     print(result);//true 上传成功，false失败
   }
 
