@@ -46,12 +46,33 @@
     } params:nil checkCrc:NO cancellationSignal:^BOOL{
         return self.isCanceled;
     }];
-    
+
     QNUploadManager *manager = [[QNUploadManager alloc] init];
     [manager putFile:filepath key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+
         NSLog(@"info %@", info);
         NSLog(@"resp %@",resp);
-        result(@(info.isOK));
+
+        NSString *errorStr;
+        NSDictionary *resultDict;
+        if (info.error) {
+          errorStr = info.error.description;
+          resultDict = @{};
+        }else{
+          errorStr = @"";
+          resultDict = resp;
+        }
+
+        NSDictionary *dictionary = @{
+          @"success": @(info.ok),
+          @"key": key,
+          @"error": errorStr,
+          @"result": resultDict,
+        };
+
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *string = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        result(string);
     } option:(QNUploadOption *) opt];
 }
 

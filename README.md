@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
         file.path.split('.').last;
     //上传文件
     var result = await syStorage.upload(file.path, token, key);
-    print(result);//true 上传成功，false失败
+    print(result);
   }
 
   //取消上传
