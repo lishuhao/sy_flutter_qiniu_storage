@@ -1,5 +1,5 @@
 #import "SyFlutterQiniuStoragePlugin.h"
-#import <QiniuSDK.h>
+#import "QiniuSDK.h"
 
 @interface SyFlutterQiniuStoragePlugin() <FlutterStreamHandler>
 

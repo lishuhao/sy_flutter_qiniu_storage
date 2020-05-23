@@ -20,9 +20,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   _onUpload() async {
-    //String token = '从服务端获取的token';
-    String token =
-        'l9i6L16EqkGZa-9Nn4FQqofY9xMlfN9APObA1cI8:Mf77SjPSVYb_kCkVSPVM9ler9Po=:eyJmc2l6ZUxpbWl0IjoxMDAwMDAwMCwibWltZUxpbWl0IjoiaW1hZ2VcLyoiLCJmb3JjZVNhdmVLZXkiOnRydWUsInNhdmVLZXkiOiJlNmE4YmYzMzFlMDBhNWRlY2VkZjVlMGIxNGRhZWU1MC5wbmciLCJyZXR1cm5Cb2R5Ijoie1wiYmFzZV9uYW1lXCI6XCJlNmE4YmYzMzFlMDBhNWRlY2VkZjVlMGIxNGRhZWU1MFwiLFwiZmlsZW5hbWVcIjpcImU2YThiZjMzMWUwMGE1ZGVjZWRmNWUwYjE0ZGFlZTUwLnBuZ1wiLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2NlY2VtYWluLnh4d29sby5jb21cXFwvZTZhOGJmMzMxZTAwYTVkZWNlZGY1ZTBiMTRkYWVlNTAucG5nXCJ9Iiwic2NvcGUiOiJjZWNlIiwiZGVhZGxpbmUiOjMxODAyMjU5MzB9';
+    String token = '从服务端获取的token';
     File file = await ImagePicker.pickImage(source: ImageSource.gallery);
     if (file == null) {
       return;
@@ -37,12 +35,15 @@ class _MyAppState extends State<MyApp> {
       print(percent);
     });
 
-    String key = DateTime.now().millisecondsSinceEpoch.toString() +
+    //上传文件
+    var result = await syStorage.upload(file.path, token, _key(file));
+    print(result);
+  }
+
+  String _key(File file) {
+    return DateTime.now().millisecondsSinceEpoch.toString() +
         '.' +
         file.path.split('.').last;
-    //上传文件
-    var result = await syStorage.upload(file.path, token, key);
-    print(result);
   }
 
   //取消上传
