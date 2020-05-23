@@ -1,7 +1,7 @@
 name: sy_flutter_qiniu_storage
 description: A Flutter plugin for integrating Qiniu file upload in iOS and Android applications.
   七牛文件上传
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/lishuhao/sy_flutter_qiniu_storage
 
 environment:
